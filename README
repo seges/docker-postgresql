@@ -1,1 +1,0 @@
-Extends official PostgreSQL docker image but allows you to specify database name, user and password that will be created upon brand new container start.
