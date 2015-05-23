@@ -9,3 +9,9 @@ Extends official PostgreSQL docker image but allows you to specify database name
 | DB_USERNAME | Database username that will be used to access specified databases
 | DB_PASSWORD | Username's password
 | DB_NAMES    | space-separated list of databases to be created
+
+# Run
+
+```
+docker run --rm -ti seges/postgresql:9.3.5
+```
