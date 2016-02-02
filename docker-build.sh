@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build --rm -t seges/postgresql:9.3.5 .
+docker build -f Dockerfile_9.4.5 --rm -t seges/postgresql:9.4.5 .
 

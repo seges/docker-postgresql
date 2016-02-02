@@ -7,8 +7,11 @@ for db in $DB_NAMES; do
 done
 
 
-gosu postgres postgres --single -E <<-EOSQL
-	CREATE ROLE $DB_USERNAME WITH LOGIN ENCRYPTED PASSWORD '$DB_PASSWORD';
-	$dbs
+# admin user must be superuser because CREATE EXTENSION statements are used in migrations
+#gosu postgres postgres --single -E <<-EOSQL
+psql --username postgres <<-EOSQL
+  CREATE ROLE $DB_USERNAME WITH LOGIN ENCRYPTED PASSWORD '$DB_PASSWORD';
+  CREATE ROLE ${DB_USERNAME_ADMIN} WITH SUPERUSER LOGIN ENCRYPTED PASSWORD '$DB_PASSWORD_ADMIN';
+  $dbs
 EOSQL
 
