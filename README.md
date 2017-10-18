@@ -15,5 +15,11 @@ Extends official PostgreSQL docker image but allows you to specify database name
 # Run
 
 ```
-docker run --rm -e DB_NAMES=mydb -e DB_USERNAME=myuser -e DB_PASSWORD=mypass -e DB_USERNAME_ADMIN=myadmin -e DB_PASSWORD_ADMIN=admpass -ti seges/postgresql:9.4.5
+docker run --rm -e DB_NAMES=mydb -e DB_USERNAME=myuser -e DB_PASSWORD=mypass -e DB_USERNAME_ADMIN=myadmin -e DB_PASSWORD_ADMIN=admpass -ti seges/postgresql:10.0
+```
+
+or Alpine-based version
+
+```
+docker run --rm -e DB_NAMES=mydb -e DB_USERNAME=myuser -e DB_PASSWORD=mypass -e DB_USERNAME_ADMIN=myadmin -e DB_PASSWORD_ADMIN=admpass -ti seges/postgresql:10.0-alpine
 ```
