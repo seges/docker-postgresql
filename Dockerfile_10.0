@@ -1,0 +1,5 @@
+FROM postgres:10.0
+MAINTAINER Ladislav Gazo <gazo@seges.sk>
+
+ADD one-db-init.bash /docker-entrypoint-initdb.d/one-db-init.sh
+
